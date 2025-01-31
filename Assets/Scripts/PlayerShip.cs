@@ -7,11 +7,11 @@ public class PlayerShip : MonoBehaviour {
     public Vector3 forceVector;
     public float maxSpeed;
 
-    public Camera mainCamera;
-    public Camera povCamera;
+    public Camera mainCamera, povCamera;
     public bool isPOVCameraActive;
-    public float shakeDuration;
-    public float shakeMagnitude;
+    public float shakeDuration, shakeMagnitude;
+    public int ammoCount, maxAmmo;
+
     // Start is called before the first frame update
     void Start() {
         forceVector.x = 600.0f; // 20.0f;
@@ -22,6 +22,9 @@ public class PlayerShip : MonoBehaviour {
 
         mainCamera.gameObject.SetActive(true);
         povCamera.gameObject.SetActive(false);
+
+        ammoCount = 30;
+        maxAmmo = 60;
     }
 
     void FixedUpdate() {
@@ -53,14 +56,16 @@ public class PlayerShip : MonoBehaviour {
     void Update() {
         // Fire the player projectile
         if (Input.GetButtonDown("Fire1") || Input.GetButtonDown("Jump")) {
-            Debug.Log("Player Fires!");
-            // Play shoot sound
-            AudioSource.PlayClipAtPoint(shootSound, gameObject.transform.position);
-            // Spawn Projectile
-            Vector3 spawnPos = gameObject.transform.position;
-            spawnPos.y = 1.5f;
-            GameObject obj = Instantiate(projectile, spawnPos, Quaternion.identity) as GameObject;
-            
+            if (ammoCount > 0) {
+                Debug.Log("Player Fires!");
+                // Play shoot sound
+                AudioSource.PlayClipAtPoint(shootSound, gameObject.transform.position);
+                // Spawn Projectile
+                Vector3 spawnPos = gameObject.transform.position;
+                spawnPos.y = 1.5f;
+                GameObject obj = Instantiate(projectile, spawnPos, Quaternion.identity) as GameObject;
+                ammoCount--;
+            }
         }
         
         // Switch Camera
@@ -106,5 +111,18 @@ public class PlayerShip : MonoBehaviour {
         // Reset the camera position
         mainCamera.transform.position = mainCameraPos;
         povCamera.transform.position = gameObject.transform.position + new Vector3(0, -1.0f, -1.0f);
+    }
+
+    void OnCollisionEnter(Collision collision) {
+        Collider collider = collision.collider;
+
+        if (collider.CompareTag("CollectableAmmo")) {
+            // Increase ammo count
+            if (ammoCount < maxAmmo) {
+                ammoCount++;
+            }
+            // destory the ammo
+            Destroy(collider.gameObject);
+        }
     }
 }
