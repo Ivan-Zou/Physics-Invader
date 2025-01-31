@@ -468,6 +468,7 @@ MonoBehaviour:
   projectile: {fileID: 2720444497664332253, guid: 983497aa959848840a46b164d2261144, type: 3}
   shootSound: {fileID: 8300000, guid: e9276abbb2f3c8d4cbfd44c9efa76394, type: 3}
   damagedSound: {fileID: 8300000, guid: af6104f365f9ee84d9f1fe4df18f35e4, type: 3}
+  damagedExplosion: {fileID: 6836326744015745962, guid: 9cdd7dc53cbfe68438a5bdf3fa16cd36, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

@@ -72,9 +72,12 @@ public class PlayerShip : MonoBehaviour {
     }
 
     public AudioClip damagedSound;
+    public GameObject damagedExplosion;
     public void Die() {
         // Play damaged sound
         AudioSource.PlayClipAtPoint(damagedSound, gameObject.transform.position);
+        // Create explosion particles
+        Instantiate(damagedExplosion, gameObject.transform.position, Quaternion.identity);
         // Decrease lives by 1;
         GameObject obj = GameObject.Find("GlobalObject");
         Global g = obj.GetComponent<Global>();
