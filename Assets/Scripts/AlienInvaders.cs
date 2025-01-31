@@ -104,13 +104,15 @@ public class AlienInvaders : MonoBehaviour {
             }
         }
 
-        // Check for collisions with screen edges
+        // Check for collisions with edges
         bool hitEdge = false;
+        float leftBoundary = -16.0f;
+        float rightBoundary = 16.0f;
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < cols; col++) {
                 if (invadersGrid[row, col] != null) {
                     Vector3 currPos = invadersGrid[row, col].transform.position;
-                    if (currPos.x <= -16.0f || currPos.x >= 16.0f) {
+                    if (currPos.x <= leftBoundary || currPos.x >= rightBoundary) {
                         hitEdge = true;
                         break;
                     }
@@ -119,7 +121,7 @@ public class AlienInvaders : MonoBehaviour {
             if (hitEdge) break;
         }
 
-        // If the invaders hits the screen edge, change direction and move down
+        // If the invaders hits the edge, change direction and move down
         if (hitEdge && !hasChangedDirection) {
             Debug.Log("Invaders Changing Direction");
             direction *= -1;
@@ -134,7 +136,21 @@ public class AlienInvaders : MonoBehaviour {
         }
 
         // reset hasChangedDirection when all invaders are away from the edge
-        if (!hitEdge) {
+        bool awayFromEdge = true;
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; col < cols; col++) {
+                if (invadersGrid[row, col] != null) {
+                    float xPos = invadersGrid[row, col].transform.position.x;
+                    if (xPos <= leftBoundary || xPos >= rightBoundary) {
+                        awayFromEdge = false;
+                        break;
+                    }
+                }
+            }
+            if (!awayFromEdge) break;
+        }
+
+        if (awayFromEdge) {
             hasChangedDirection = false;
         }
     }
