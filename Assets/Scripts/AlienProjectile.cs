@@ -5,6 +5,7 @@ using UnityEngine;
 public class AlienProjectile : MonoBehaviour {
     public Vector3 thrust;
     public float speed;
+    public GameObject deadAlienProjectile;
     // Start is called before the first frame update
     void Start() {
         // thrust.y = -300.0f;
@@ -40,6 +41,15 @@ public class AlienProjectile : MonoBehaviour {
         } else if (collider.CompareTag("Floor")) {
             // destory the projectile
             Destroy(gameObject);
+            // Spawn the dead projectile
+            Vector3 spawnPos = gameObject.transform.position;
+            Instantiate(deadAlienProjectile, spawnPos, Quaternion.identity);
+        } else if (collider.CompareTag("Dead")) {
+            // destory the projectile
+            Destroy(gameObject);
+            // Spawn the dead projectile
+            Vector3 spawnPos = gameObject.transform.position;
+            Instantiate(deadAlienProjectile, spawnPos, Quaternion.identity);
         } else {
             Debug.Log("Collided with " + collider.tag);
         }

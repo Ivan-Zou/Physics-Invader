@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3176896967239560601
+--- !u!1 &7314054306891327382
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5983213056851578609}
-  - component: {fileID: 4415772380864475905}
-  - component: {fileID: 4382696108630908430}
-  - component: {fileID: 7739253335521157105}
-  - component: {fileID: 3293472953801879909}
-  - component: {fileID: 7011663670920586362}
+  - component: {fileID: 5880180896905589990}
+  - component: {fileID: 7464078680555808688}
+  - component: {fileID: 9209115551047531926}
+  - component: {fileID: 8181188154138928929}
+  - component: {fileID: 6738384360427737332}
+  - component: {fileID: 7619609578488452147}
+  - component: {fileID: 5571889551433985320}
   m_Layer: 0
-  m_Name: AlienProjectile
-  m_TagString: AlienProjectile
+  m_Name: DeadPlayerProjectile
+  m_TagString: Dead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5983213056851578609
+--- !u!4 &5880180896905589990
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3176896967239560601}
+  m_GameObject: {fileID: 7314054306891327382}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.5, z: 0.1}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.25, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4415772380864475905
+--- !u!33 &7464078680555808688
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3176896967239560601}
+  m_GameObject: {fileID: 7314054306891327382}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &4382696108630908430
+--- !u!23 &9209115551047531926
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3176896967239560601}
+  m_GameObject: {fileID: 7314054306891327382}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f188654636426914d8fd57665f6688e4, type: 2}
+  - {fileID: 2100000, guid: d8b7c0b6c4d2e724f9a7ae5f73f4beb5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,13 +87,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &7739253335521157105
+--- !u!136 &8181188154138928929
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3176896967239560601}
+  m_GameObject: {fileID: 7314054306891327382}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -109,13 +110,13 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &3293472953801879909
+--- !u!54 &6738384360427737332
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3176896967239560601}
+  m_GameObject: {fileID: 7314054306891327382}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -131,23 +132,32 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
+  m_Constraints: 8
   m_CollisionDetection: 0
---- !u!114 &7011663670920586362
+--- !u!114 &7619609578488452147
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3176896967239560601}
+  m_GameObject: {fileID: 7314054306891327382}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ccd56ab1c12da14ea180167b7004e44, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f394ecc0659138418733ff5d3050955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: {x: 0, y: 0, z: 0}
-  speed: 0
-  deadAlienProjectile: {fileID: 3026597164305102367, guid: 7ae67010e89720546b2f2932c4f11059, type: 3}
+--- !u!114 &5571889551433985320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7314054306891327382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf941aac3474b1343a4e19bb0db3527c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -122,6 +122,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: {x: 0, y: 0, z: 0}
+  deadLargeInvader: {fileID: 745477183872330468, guid: e57a135cf64602c41b6a79e99464ad14, type: 3}
+  deadMediumInvader: {fileID: 8777039998742911219, guid: a623942529bd56047a65fa197c695e45, type: 3}
+  deadSmallInvader: {fileID: 8410931052348754354, guid: b2819cd336e064b48a81187d778bad8d, type: 3}
+  deadUFO: {fileID: 7384975848327602627, guid: bb2a9607ea81ce848bced25ff822c99b, type: 3}
+  deadPlayerProjectile: {fileID: 7314054306891327382, guid: 482bd978526c8b944aea649fda2cf7f6, type: 3}
 --- !u!54 &494631215699955225
 Rigidbody:
   m_ObjectHideFlags: 0
