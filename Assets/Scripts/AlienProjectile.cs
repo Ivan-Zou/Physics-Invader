@@ -38,7 +38,7 @@ public class AlienProjectile : MonoBehaviour {
             block.Die();
             // destory the projectile
             Destroy(gameObject);
-        } else if (collider.CompareTag("Floor") || collider.CompareTag("Dead") || collider.CompareTag("AlienProjectile")) {
+        } else if (collider.CompareTag("Floor") || collider.CompareTag("Dead") || collider.CompareTag("PlayerProjectile")) {
             // destory the projectile
             Destroy(gameObject);
             // Spawn the dead projectile

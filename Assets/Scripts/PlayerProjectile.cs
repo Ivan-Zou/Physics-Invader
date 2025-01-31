@@ -74,7 +74,7 @@ public class PlayerProjectile : MonoBehaviour {
             // Spawn the dead projectile
             Vector3 spawnPos2 = gameObject.transform.position;
             Instantiate(deadPlayerProjectile, spawnPos2, Quaternion.identity);
-        } else if (collider.CompareTag("Dead")) {
+        } else if (collider.CompareTag("Dead") || collider.CompareTag("AlienProjectile")) {
             // destory the projectile
             Destroy(gameObject);
             // Spawn the dead projectile
