@@ -35,7 +35,7 @@ public class AlienInvaders : MonoBehaviour {
         startPos = new Vector3(-14.0f, 7.0f, 0);
 
         baseSpeed = 1.5f;
-        speedMultiplier = 0.05f;
+        speedMultiplier = 0.04f;
         currSpeed = baseSpeed;
 
         moveDownDist = 0.5f;
