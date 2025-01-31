@@ -14,7 +14,7 @@ public class PlayerShip : MonoBehaviour {
     public float shakeMagnitude;
     // Start is called before the first frame update
     void Start() {
-        forceVector.x = 500.0f; // 20.0f;
+        forceVector.x = 600.0f; // 20.0f;
         maxSpeed = 50.0f;
 
         shakeDuration = 0.5f;
