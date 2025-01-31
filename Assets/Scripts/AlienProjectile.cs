@@ -38,13 +38,7 @@ public class AlienProjectile : MonoBehaviour {
             block.Die();
             // destory the projectile
             Destroy(gameObject);
-        } else if (collider.CompareTag("Floor")) {
-            // destory the projectile
-            Destroy(gameObject);
-            // Spawn the dead projectile
-            Vector3 spawnPos = gameObject.transform.position;
-            Instantiate(deadAlienProjectile, spawnPos, Quaternion.identity);
-        } else if (collider.CompareTag("Dead")) {
+        } else if (collider.CompareTag("Floor") || collider.CompareTag("Dead") || collider.CompareTag("AlienProjectile")) {
             // destory the projectile
             Destroy(gameObject);
             // Spawn the dead projectile
