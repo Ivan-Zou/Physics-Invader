@@ -162,3 +162,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoPickUpSound: {fileID: 8300000, guid: 962d85253d29cb9448b93da4a35f00a2, type: 3}
+  ammoCount: 1

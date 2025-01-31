@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CollectableAmmo : MonoBehaviour {
     public AudioClip ammoPickUpSound;
+    public int ammoCount;
     void OnCollisionEnter(Collision collision) {
         Collider collider = collision.collider;
 
@@ -12,7 +13,7 @@ public class CollectableAmmo : MonoBehaviour {
             // If the ammo count is not at capacity
             if (player.ammoCount < player.maxAmmo) {
                 // Increase ammo count
-                player.ammoCount++;
+                player.ammoCount += ammoCount;
                 // Play ammo pick up sound
                 AudioSource.PlayClipAtPoint(ammoPickUpSound, gameObject.transform.position);
                 // destory the ammo
