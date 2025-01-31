@@ -112,17 +112,4 @@ public class PlayerShip : MonoBehaviour {
         mainCamera.transform.position = mainCameraPos;
         povCamera.transform.position = gameObject.transform.position + new Vector3(0, -1.0f, -1.0f);
     }
-
-    void OnCollisionEnter(Collision collision) {
-        Collider collider = collision.collider;
-
-        if (collider.CompareTag("CollectableAmmo")) {
-            // Increase ammo count
-            if (ammoCount < maxAmmo) {
-                ammoCount++;
-            }
-            // destory the ammo
-            Destroy(collider.gameObject);
-        }
-    }
 }
