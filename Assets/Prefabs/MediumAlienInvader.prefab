@@ -332,7 +332,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointValue: 0
+  dropChance: 0
   deathSound: {fileID: 8300000, guid: 2c18e5028276ac84b8fb8cbe292fe740, type: 3}
   deathExplosion: {fileID: 7773613584238697085, guid: 0bde16ec4263dff4f975b51e05c8d750, type: 3}
+  ammoDrop: {fileID: 7859374880903018550, guid: 621e34255b8c7384a9d2cec53d062b8b, type: 3}
+  lifeDrop: {fileID: 3406181343163707364, guid: 823385feaa9b13e42a98748ce0db791a, type: 3}
   canShoot: 0
   projectile: {fileID: 3176896967239560601, guid: 13098958bb20a204d8ed78a1fc522141, type: 3}

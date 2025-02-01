@@ -5,6 +5,7 @@ using UnityEngine;
 public class UFO : MonoBehaviour {
     public int pointValue;
     public float speed, rotSpeed;
+
     // Start is called before the first frame update
     void Start() {
         int[] possiblePoints = new int[] {50, 100, 150, 200, 300};
@@ -15,6 +16,7 @@ public class UFO : MonoBehaviour {
 
     public AudioClip deathSound;
     public GameObject deathExplosion;
+    public GameObject ammoDrop, lifeDrop;
     public void Die() {
         // Play death sound
         AudioSource.PlayClipAtPoint(deathSound, gameObject.transform.position);
@@ -24,9 +26,11 @@ public class UFO : MonoBehaviour {
         GameObject obj = GameObject.Find("GlobalObject");
         Global g = obj.GetComponent<Global>();
         g.score += pointValue;
-        // Destroy object
+        // Determine which item to drop (50% chance for each)
+        GameObject dropItem = (Random.value < 0.5f) ? ammoDrop : lifeDrop;
+        Instantiate(dropItem, gameObject.transform.position, Quaternion.identity);
+        // Destroy UFO object
         Destroy(gameObject);
-
     }
 
     // Update is called once per frame

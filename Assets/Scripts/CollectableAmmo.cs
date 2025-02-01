@@ -19,6 +19,13 @@ public class CollectableAmmo : MonoBehaviour {
                 // destory the ammo
                 Destroy(gameObject);
             }
+        } else if (collision.collider.CompareTag("Floor")) {
+            
+        } else {
+            // If it collides with anything else and is the Ammo Drop, ignore the collision
+            if (ammoCount == 15) {
+                Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+            }
         }
     }
 }

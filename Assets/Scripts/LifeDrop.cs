@@ -17,6 +17,11 @@ public class LifeDrop : MonoBehaviour {
             AudioSource.PlayClipAtPoint(lifePickUpSound, gameObject.transform.position);
             // destory the heart
             Destroy(gameObject);
+        } else if (collision.collider.CompareTag("Floor")) {
+            
+        } else {
+            // If it collides with anything else, ignore the collision
+            Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
         }
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3107703155645917121}
   - component: {fileID: 8734163425755463757}
   - component: {fileID: 2264375198921170364}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LifeDrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
