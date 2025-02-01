@@ -106,6 +106,7 @@ public class AlienInvaders : MonoBehaviour {
         }
 
         // Check for collisions with edges
+        hitEdge = false;
         float leftBoundary = -16.0f;
         float rightBoundary = 16.0f;
         for (int row = 0; row < rows; row++) {
@@ -126,7 +127,6 @@ public class AlienInvaders : MonoBehaviour {
             Debug.Log("Invaders Changing Direction");
             direction *= -1;
             hasChangedDirection = true;
-            hitEdge = false;
             for (int row = 0; row < rows; row++) {
                 for (int col = 0; col < cols; col++) {
                     if (invadersGrid[row, col] != null) {
