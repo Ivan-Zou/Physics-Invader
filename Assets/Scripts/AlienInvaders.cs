@@ -18,7 +18,7 @@ public class AlienInvaders : MonoBehaviour {
 
     private float ufoTimer, ufoInterval;
     public Vector3 ufoStartPos;
-    private bool hasChangedDirection;
+    private bool hitEdge, hasChangedDirection;
     public int wave;
     public float gameOverY;
 
@@ -47,6 +47,7 @@ public class AlienInvaders : MonoBehaviour {
         ResetUFOTimer();
         ufoStartPos = new Vector3(-20.0f, 18.0f, 0);
 
+        hitEdge = false;
         hasChangedDirection = false;
         gameOverY = 1.0f;
 
@@ -105,7 +106,6 @@ public class AlienInvaders : MonoBehaviour {
         }
 
         // Check for collisions with edges
-        bool hitEdge = false;
         float leftBoundary = -16.0f;
         float rightBoundary = 16.0f;
         for (int row = 0; row < rows; row++) {
@@ -126,6 +126,7 @@ public class AlienInvaders : MonoBehaviour {
             Debug.Log("Invaders Changing Direction");
             direction *= -1;
             hasChangedDirection = true;
+            hitEdge = false;
             for (int row = 0; row < rows; row++) {
                 for (int col = 0; col < cols; col++) {
                     if (invadersGrid[row, col] != null) {
@@ -136,21 +137,7 @@ public class AlienInvaders : MonoBehaviour {
         }
 
         // reset hasChangedDirection when all invaders are away from the edge
-        bool awayFromEdge = true;
-        for (int row = 0; row < rows; row++) {
-            for (int col = 0; col < cols; col++) {
-                if (invadersGrid[row, col] != null) {
-                    float xPos = invadersGrid[row, col].transform.position.x;
-                    if (xPos <= leftBoundary || xPos >= rightBoundary) {
-                        awayFromEdge = false;
-                        break;
-                    }
-                }
-            }
-            if (!awayFromEdge) break;
-        }
-
-        if (awayFromEdge) {
+        if (!hitEdge) {
             hasChangedDirection = false;
         }
     }
