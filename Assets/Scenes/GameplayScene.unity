@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 632511075}
   - component: {fileID: 632511077}
   - component: {fileID: 632511074}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerShip
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1366,7 +1366,7 @@ GameObject:
   - component: {fileID: 1751258334}
   - component: {fileID: 1751258333}
   - component: {fileID: 1751258332}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Floor
   m_Icon: {fileID: 0}

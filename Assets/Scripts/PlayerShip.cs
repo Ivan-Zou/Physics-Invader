@@ -67,6 +67,10 @@ public class PlayerShip : MonoBehaviour {
                 ammoCount--;
             }
         }
+        // Make sure the ammo count is never greater than the max
+        if (ammoCount > maxAmmo) {
+            ammoCount = maxAmmo;
+        }
         
         // Switch Camera
         if (Input.GetKeyDown(KeyCode.F)) {
