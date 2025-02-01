@@ -28,7 +28,7 @@ public class SmallAlienInvader : MonoBehaviour {
         // Chance to drop either an ammoDrop or lifeDrop, but not both
         if (Random.value < dropChance) {
             GameObject dropItem = (Random.value < 0.5f) ? ammoDrop : lifeDrop;
-            Vector3 spawnPos = gameObject.transform.position + new Vector3(0, 0, -0.5f);
+            Vector3 spawnPos = gameObject.transform.position + new Vector3(0, 0, -0.3f);
             Instantiate(dropItem, spawnPos, Quaternion.identity);
         }
         // Destroy object
