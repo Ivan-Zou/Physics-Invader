@@ -28,7 +28,8 @@ public class MediumAlienInvader : MonoBehaviour {
         // Chance to drop either an ammoDrop or lifeDrop, but not both
         if (Random.value < dropChance) {
             GameObject dropItem = (Random.value < 0.5f) ? ammoDrop : lifeDrop;
-            Instantiate(dropItem, gameObject.transform.position, Quaternion.identity);
+            Vector3 spawnPos = gameObject.transform.position + new Vector3(0, 0, -0.5f);
+            Instantiate(dropItem, spawnPos, Quaternion.identity);
         }
         // Destroy object
         Destroy(gameObject);
