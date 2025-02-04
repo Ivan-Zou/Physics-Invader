@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 178
+  controlID: 329
   draggingID: 0
 --- !u!114 &2
 MonoBehaviour:
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 179
+  controlID: 293
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 180
+  controlID: 285
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -673,7 +673,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.11913158, y: -0.72106963, z: 0.12807661, w: 0.67051524}
     speed: 2
-    m_Value: {x: -0.11913159, y: 0.7210697, z: -0.12807661, w: -0.67051524}
+    m_Value: {x: 0.11912395, y: -0.7210235, z: 0.12806842, w: 0.6704723}
   m_Size:
     m_Target: 4.8075075
     speed: 2
