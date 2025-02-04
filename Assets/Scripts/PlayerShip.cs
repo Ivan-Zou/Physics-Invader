@@ -91,6 +91,10 @@ public class PlayerShip : MonoBehaviour {
         GameObject obj = GameObject.Find("GlobalObject");
         Global g = obj.GetComponent<Global>();
         g.lives--;
+        // Set playerHit to true
+        GameObject obj2 = GameObject.Find("AlienInvaders");
+        AlienInvaders invaders = obj2.GetComponent<AlienInvaders>();
+        invaders.playerHit = true;
 
         // Shake the camera
         StartCoroutine(CameraShake());

@@ -24,6 +24,9 @@ public class AlienInvaders : MonoBehaviour {
 
     public TMP_Text waveClearedText;
     public float waveClearedTextTimer, waveClearedTextDuration;
+
+    public GameObject ammoDrop, lifeDrop;
+    public bool playerHit;
     // Start is called before the first frame update
     void Start() {
         wave = 1;
@@ -54,6 +57,8 @@ public class AlienInvaders : MonoBehaviour {
         waveClearedText.gameObject.SetActive(false);
         waveClearedTextDuration = 2.0f;
         waveClearedTextTimer = waveClearedTextDuration;
+
+        playerHit = false;
     }
 
     // Update is called once per frame
@@ -227,6 +232,15 @@ public class AlienInvaders : MonoBehaviour {
             // Wait for Wave Cleared text to disapper before spawning next wave
             waveClearedTextTimer -= Time.deltaTime;
             if (waveClearedTextTimer <= 0) {
+                // Drop two Ammo Drops, if the player does not get hit when clearing the wave
+                if (!playerHit) {
+                    Vector3 spawnPos = new Vector3(0.5f, 1.0f, -0.5f);
+                    Vector3 spawnPos2 = new Vector3(-0.5f, 1.0f, -0.5f);
+                    Instantiate(ammoDrop, spawnPos, Quaternion.identity);
+                    Instantiate(ammoDrop, spawnPos2, Quaternion.identity);
+                } else {
+                    playerHit = false;
+                }
                 wave++;
                 SpawnInvaders();
                 waveClearedTextTimer = waveClearedTextDuration;

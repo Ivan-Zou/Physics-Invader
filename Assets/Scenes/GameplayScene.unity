@@ -1523,6 +1523,9 @@ MonoBehaviour:
   waveClearedText: {fileID: 524507920}
   waveClearedTextTimer: 0
   waveClearedTextDuration: 0
+  ammoDrop: {fileID: 7859374880903018550, guid: 621e34255b8c7384a9d2cec53d062b8b, type: 3}
+  lifeDrop: {fileID: 3406181343163707364, guid: 823385feaa9b13e42a98748ce0db791a, type: 3}
+  playerHit: 0
 --- !u!1 &1933861449
 GameObject:
   m_ObjectHideFlags: 0
